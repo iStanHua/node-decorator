@@ -1,2 +1,11 @@
-# node-decorator
-node decorator修饰器
+# node-decorator 修饰器
+
+## Project setup
+```
+npm install
+```
+
+## run project
+```
+npm start
+```
