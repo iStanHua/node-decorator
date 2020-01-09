@@ -1,7 +1,8 @@
 require('babel-register')({
   presets: ['env'],
   plugins: [
-    'transform-runtime'
+    'transform-runtime',
+    "transform-decorators-legacy"
   ]
 })
 
