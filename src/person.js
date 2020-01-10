@@ -2,6 +2,8 @@
 import { PropertyDecorator, MethodDecorator, Readonly, Enumerable } from './utils'
 import { Serializable, Serialize } from './utils/serializers'
 import { Debounce } from './utils/debounce'
+import { Throttle } from './utils/throttle'
+import { Trim } from './utils/trim'
 
 @Serializable()
 export default class Person {
@@ -19,7 +21,7 @@ export default class Person {
 
   @Serialize()
   get name() {
-    return this.firstName
+    return this.fullName()
   }
 
   @Serialize('language')
@@ -33,7 +35,17 @@ export default class Person {
   }
 
   @Debounce(500)
-  speek() {
-    console.log(this.fullName())
+  debounce() {
+    console.log('Debounce:', this.fullName())
+  }
+
+  @Throttle(800)
+  throttle() {
+    console.log('Throttle:', this.fullName())
+  }
+
+  @Trim()
+  trim() {
+    return ` \n\n\n ${this.firstName} ${this.lastName} \n\n\n`
   }
 }
