@@ -44,8 +44,8 @@ export default class Person {
     console.log('Throttle:', this.fullName())
   }
 
-  @Trim()
+  @Trim
   trim() {
-    return ` \n\n\n ${this.firstName} ${this.lastName} \n\n\n`
+    return ` \n\n\n ${this.fullName()} \n\n\n`
   }
 }

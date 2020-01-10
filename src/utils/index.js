@@ -1,6 +1,7 @@
 
 export function ClassDecorator(target) {
   console.log('ClassDecorator: ', target)
+  target.annotated = true
 }
 
 export function PropertyDecorator(target, propertyKey) {
